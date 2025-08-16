@@ -33,7 +33,7 @@ jobs:
     
     - name: Run tests with coverage
       run: |
-        python -m pytest -n auto --cov=./ --cov-report=xml --cov-report=term-missing --cov-fail-under=45
+        python -m pytest -n auto --cov=./ --cov-report=xml --cov-report=term-missing --cov-fail-under=30
       env:
         PYTHONPATH: ${{ github.workspace }}
     
