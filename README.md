@@ -5,19 +5,19 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![codecov](https://codecov.io/gh/pranav271103/Ultra-Tokenizer/graph/badge.svg?token=YOUR-TOKEN)](https://codecov.io/gh/pranav271103/Ultra-Tokenizer)
-[![Documentation Status](https://readthedocs.org/projects/mytokenizer/badge/?version=latest)](https://mytokenizer.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/ultra-tokenizer/badge/?version=latest)](https://pranav271103.github.io/Ultra-Tokenizer/)
 
 Ultra-Tokenizer is a high-performance, production-ready tokenizer that supports multiple subword tokenization algorithms including BPE, WordPiece, and Unigram. Designed for efficiency and flexibility, it's perfect for modern NLP pipelines.
 
 ## Table of Contents
 
-- [Features](#-features)
-- [Installation](#-installation)
-- [Quick Start](#-quick-start)
-- [Documentation](#-documentation)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Contact](#-contact)
+- [Features](https://pranav271103.github.io/Ultra-Tokenizer/#key-features)
+- [Installation](https://pranav271103.github.io/Ultra-Tokenizer/installation/)
+- [Quick Start](https://pranav271103.github.io/Ultra-Tokenizer/guide/basic-usage/)
+- [Documentation](https://pranav271103.github.io/Ultra-Tokenizer/)
+- [Contributing](https://pranav271103.github.io/Ultra-Tokenizer/#license-and-contributing)
+- [License](LICENSE)
+- [Contact](https://github.com/pranav271103)
 
 ## Why Choose Ultra-Tokenizer?
 
@@ -51,11 +51,11 @@ While there are several tokenization libraries available, Ultra-Tokenizer stands
 | Multiple Algorithms | ✅ BPE, WordPiece, Unigram | ✅ BPE, WordPiece, Unigram | ❌ Mostly rule-based | ❌ Rule-based |
 | Training Interface | ✅ Simple and intuitive | ✅ Comprehensive | ❌ Limited | ❌ No built-in training |
 | Memory Efficiency | ✅ Excellent with smart caching | ⚠️ Good, but can be heavy | ✅ Good | ⚠️ Can be memory intensive |
-| Performance | ⚡ Blazing fast | Fast | Fast | Slower |
-| Dependencies | Minimal | Heavy (Rust) | Heavy (Cython) | Heavy |
+| Performance | ⚡ Blazing fast | ✅ Fast | ✅ Fast | ❌ Slower |
+| Dependencies | ✅Minimal | ❌ Heavy (Rust) | ❌ Heavy (Cython) | ❌ Heavy |
 | Type Hints | ✅ Full support | ⚠️ Partial | ⚠️ Partial | ❌ None |
 | CLI Support | ✅ Built-in | ✅ Available | ❌ No | ❌ No |
-| Learning Curve | Gentle | Steep | Moderate | Steep |
+| Learning Curve | ✅ Gentle | ✅ Steep | ⚠️ Moderate | ✅ Steep |
 
 ## Features
 
@@ -153,18 +153,11 @@ pytest tests/
 
 ### Code Style
 
-We use `black` for code formatting and `isort` for import sorting:
+We used `black` for code formatting and `isort` for import sorting:
 
 ```bash
 black .
 isort .
-```
-
-### Building Documentation
-
-```bash
-cd docs
-make html
 ```
 
 ## Contributing
