@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://pranav271103.github.io/MyTokenizer/</loc>
+         <loc>https://pranav271103.github.io/Ultra-Tokenizer/</loc>
          <lastmod>2025-08-16</lastmod>
     </url>
     <url>
-         <loc>https://pranav271103.github.io/MyTokenizer/installation/</loc>
+         <loc>https://pranav271103.github.io/Ultra-Tokenizer/installation/</loc>
          <lastmod>2025-08-16</lastmod>
     </url>
     <url>
-         <loc>https://pranav271103.github.io/MyTokenizer/api/tokenizer/</loc>
+         <loc>https://pranav271103.github.io/Ultra-Tokenizer/api/tokenizer/</loc>
          <lastmod>2025-08-16</lastmod>
     </url>
     <url>
-         <loc>https://pranav271103.github.io/MyTokenizer/examples/finetuning/</loc>
+         <loc>https://pranav271103.github.io/Ultra-Tokenizer/examples/finetuning/</loc>
          <lastmod>2025-08-16</lastmod>
     </url>
     <url>
-         <loc>https://pranav271103.github.io/MyTokenizer/examples/training/</loc>
+         <loc>https://pranav271103.github.io/Ultra-Tokenizer/examples/training/</loc>
          <lastmod>2025-08-16</lastmod>
     </url>
     <url>
-         <loc>https://pranav271103.github.io/MyTokenizer/getting-started/quickstart/</loc>
+         <loc>https://pranav271103.github.io/Ultra-Tokenizer/getting-started/quickstart/</loc>
          <lastmod>2025-08-16</lastmod>
     </url>
     <url>
-         <loc>https://pranav271103.github.io/MyTokenizer/guide/advanced-usage/</loc>
+         <loc>https://pranav271103.github.io/Ultra-Tokenizer/guide/advanced-usage/</loc>
          <lastmod>2025-08-16</lastmod>
     </url>
     <url>
-         <loc>https://pranav271103.github.io/MyTokenizer/guide/basic-usage/</loc>
+         <loc>https://pranav271103.github.io/Ultra-Tokenizer/guide/basic-usage/</loc>
          <lastmod>2025-08-16</lastmod>
     </url>
     <url>
-         <loc>https://pranav271103.github.io/MyTokenizer/guide/customization/</loc>
+         <loc>https://pranav271103.github.io/Ultra-Tokenizer/guide/customization/</loc>
          <lastmod>2025-08-16</lastmod>
     </url>
 </urlset>
