@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ultra-tokenizer"
-version = "0.1.0"
+version = "0.1.2"
 description = "Advanced tokenizer with support for BPE, WordPiece, and Unigram algorithms"
-readme = "README.md"
+readme = "PYPI_DESCRIPTION.md"
 authors = [
     {name = "Pranav Singh", email = "pranav.singh01010101@gmail.com"}
 ]
