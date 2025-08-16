@@ -1,0 +1,108 @@
+site_name: MyTokenizer
+site_url: https://pranav271103.github.io/MyTokenizer/
+repo_url: https://github.com/pranav271103/MyTokenizer
+repo_name: pranav271103/MyTokenizer
+copyright: Copyright &copy; 2025 Pranav Singh
+
+# Theme configuration
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - toc.integrate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.ico
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+# Plugins
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_root_heading: true
+            show_source: true
+            show_category_heading: true
+  - git-revision-date-localized:
+      type: date
+      timezone: Asia/Kolkata
+      locale: en
+
+# Navigation
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: installation.md
+      - Quickstart: getting-started/quickstart.md
+  - User Guide:
+      - Basic Usage: guide/basic-usage.md
+      - Advanced Usage: guide/advanced-usage.md
+      - Customization: guide/customization.md
+  - API Reference:
+      - Tokenizer: api/tokenizer.md
+  - Examples:
+      - Training: examples/training.md
+      - Fine-tuning: examples/finetuning.md
+  # Project files are available in the repository root
+  - Project: https://github.com/pranav271103/MyTokenizer
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/pranav271103/MyTokenizer
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/mytokenizer/
+
+# Extra CSS and JS
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
+  - https://cdn.jsdelivr.net/npm/chart.js
+
+# Build options
+strict: true
+use_directory_urls: true

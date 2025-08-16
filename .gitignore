@@ -44,6 +44,17 @@ trained_tokenizer/
 *.pkl
 *.joblib
 
+# MkDocs build output
+site/
+.cache/
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local development
+.mkdocs/
+
 # Logs and databases
 *.log
 *.sqlite
