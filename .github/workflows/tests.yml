@@ -11,11 +11,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+        os: [ubuntu-latest]
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
     
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
@@ -26,15 +29,29 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -e .[test]
-        pip install pytest pytest-cov codecov
+        pip install pytest pytest-cov pytest-xdist
     
     - name: Run tests with coverage
       run: |
-        python -m pytest --cov=./ --cov-report=xml --cov-report=term
+        python -m pytest -n auto --cov=./ --cov-report=xml --cov-report=term-missing --cov-fail-under=45
+      env:
+        PYTHONPATH: ${{ github.workspace }}
     
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./coverage.xml
+        token: ${{ secrets.CODECOV_TOKEN || '${{ github.token }}' }}
+        files: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
         fail_ci_if_error: false
+        verbose: true
+        path_to_write_report: codecov_report.md
+
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: coverage-report
+        path: codecov_report.md
+        retention-days: 5

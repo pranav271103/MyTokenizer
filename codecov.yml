@@ -1,0 +1,32 @@
+codecov:
+  require_ci_to_pass: true
+  max_report_age: off
+  notify:
+    after_n_builds: 1
+  status:
+    project:
+      default:
+        target: 70%  # Target coverage percentage
+        threshold: 1%  # Allow 1% decrease in coverage
+    patch:
+      default:
+        target: 70%
+        threshold: 1%
+  ignore:
+    - "tests/*"  # Ignore test files in coverage
+    - "**/__pycache__"
+    - "**/*.pyc"
+    - "**/setup.py"
+    - "**/__init__.py"
+  coverage:
+    precision: 2
+    round: down
+    range: [70, 95]  # Set coverage range for status colors
+  parsers:
+    python:  # Python specific settings
+      coverage:
+        status:
+          project:  # Adjust project coverage settings
+            default:
+              target: 70%
+              threshold: 1%
