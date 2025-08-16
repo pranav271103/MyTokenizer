@@ -4,7 +4,6 @@
 [![Python Version](https://img.shields.io/pypi/pyversions/ultra-tokenizer.svg)](https://pypi.org/project/ultra-tokenizer/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![codecov](https://codecov.io/gh/pranav271103/Ultra-Tokenizer/graph/badge.svg?token=YOUR-TOKEN)](https://codecov.io/gh/pranav271103/Ultra-Tokenizer)
 [![Documentation Status](https://readthedocs.org/projects/ultra-tokenizer/badge/?version=latest)](https://pranav271103.github.io/Ultra-Tokenizer/)
 
 Ultra-Tokenizer is a high-performance, production-ready tokenizer that supports multiple subword tokenization algorithms including BPE, WordPiece, and Unigram. Designed for efficiency and flexibility, it's perfect for modern NLP pipelines.
