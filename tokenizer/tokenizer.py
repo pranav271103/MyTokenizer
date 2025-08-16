@@ -430,10 +430,81 @@ class Tokenizer:
         pass  # Implementation will be added
 
     def save(self, path: str):
-        """Save tokenizer to disk."""
-        pass  # Implementation will be added
+        """
+        Save tokenizer to disk.
+        
+        Args:
+            path: Directory path where to save the tokenizer files
+        """
+        import os
+        import json
+        
+        # Create directory if it doesn't exist
+        os.makedirs(path, exist_ok=True)
+        
+        # Save tokenizer configuration
+        config = {
+            "unk_token": self.unk_token,
+            "pad_token": self.pad_token,
+            "cls_token": self.cls_token,
+            "sep_token": self.sep_token,
+            "mask_token": self.mask_token,
+            "lower_case": self.lower_case,
+            "strip_accents": self.strip_accents,
+            "tokenize_chinese_chars": self.tokenize_chinese_chars,
+        }
+        
+        config_path = os.path.join(path, "tokenizer_config.json")
+        with open(config_path, 'w', encoding='utf-8') as f:
+            json.dump(config, f, ensure_ascii=False, indent=2)
+        
+        # Save vocabulary
+        if self.vocab:
+            vocab_path = os.path.join(path, "vocab.json")
+            self.vocab.save(vocab_path)
+        
+        logger.info(f"Tokenizer saved to {path}")
 
     @classmethod
     def load(cls, path: str) -> "Tokenizer":
-        """Load tokenizer from disk."""
-        pass  # Implementation will be added
+        """
+        Load tokenizer from disk.
+        
+        Args:
+            path: Directory path where the tokenizer files are saved
+        
+        Returns:
+            Tokenizer: Loaded tokenizer instance
+        """
+        import os
+        import json
+        
+        # Load tokenizer configuration
+        config_path = os.path.join(path, "tokenizer_config.json")
+        if not os.path.exists(config_path):
+            raise FileNotFoundError(f"Tokenizer config file not found at {config_path}")
+        
+        with open(config_path, 'r', encoding='utf-8') as f:
+            config = json.load(f)
+        
+        # Load vocabulary
+        vocab_path = os.path.join(path, "vocab.json")
+        vocab = None
+        if os.path.exists(vocab_path):
+            vocab = Vocabulary.load(vocab_path)
+        
+        # Create tokenizer instance with loaded config and vocabulary
+        tokenizer = cls(
+            vocab=vocab,
+            unk_token=config["unk_token"],
+            pad_token=config["pad_token"],
+            cls_token=config["cls_token"],
+            sep_token=config["sep_token"],
+            mask_token=config["mask_token"],
+            lower_case=config["lower_case"],
+            strip_accents=config["strip_accents"],
+            tokenize_chinese_chars=config["tokenize_chinese_chars"]
+        )
+        
+        logger.info(f"Tokenizer loaded from {path}")
+        return tokenizer

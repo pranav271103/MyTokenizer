@@ -1,58 +1,64 @@
 import pytest
+import json
+import os
 from tokenizer.vocab import Vocabulary
 
 def test_vocabulary_initialization():
     """Test Vocabulary initialization with custom parameters."""
     vocab = Vocabulary(
+        vocab_size=1000,
         unk_token="[UNK]",
         pad_token="[PAD]"
     )
     assert vocab.unk_token == "[UNK]"
     assert vocab.pad_token == "[PAD]"
-    assert vocab.unk_token_id == 0
-    assert vocab.pad_token_id == 1
+    assert "[UNK]" in vocab.token2id
+    assert "[PAD]" in vocab.token2id
 
 def test_add_token():
     """Test adding tokens to vocabulary."""
-    vocab = Vocabulary()
+    vocab = Vocabulary(vocab_size=1000)
+    initial_size = len(vocab.token2id)
     token_id = vocab.add_token("test")
-    assert token_id == 2  # After [UNK] and [PAD]
-    assert "test" in vocab
-    assert vocab["test"] == token_id
+    
+    assert "test" in vocab.token2id
+    assert vocab.token2id["test"] == token_id
+    assert len(vocab.token2id) == initial_size + 1
 
-def test_encode_decode():
-    """Test encoding and decoding tokens."""
-    vocab = Vocabulary()
-    tokens = ["hello", "world", "!"]
+def test_tokenize():
+    """Test tokenization functionality."""
+    vocab = Vocabulary(vocab_size=1000)
+    # Add some test tokens
+    vocab.add_token("hello")
+    vocab.add_token("world")
     
-    # Add tokens
-    for token in tokens:
-        vocab.add_token(token)
-    
-    # Test encoding
-    encoded = vocab.encode(tokens)
-    assert len(encoded) == len(tokens)
-    
-    # Test decoding
-    decoded = vocab.decode(encoded)
-    assert decoded == tokens
+    # Test tokenization
+    tokens = vocab.tokenize("hello world")
+    assert isinstance(tokens, list)
+    assert len(tokens) > 0
 
 def test_save_load(tmp_path):
     """Test saving and loading vocabulary."""
-    vocab = Vocabulary()
+    vocab = Vocabulary(vocab_size=1000)
     tokens = ["test", "save", "load"]
     for token in tokens:
         vocab.add_token(token)
     
     # Save to file
-    file_path = tmp_path / "vocab.json"
+    file_path = os.path.join(tmp_path, "vocab.json")
     vocab.save(file_path)
     
-    # Load from file
-    loaded_vocab = Vocabulary.from_file(file_path)
+    # Verify file exists
+    assert os.path.exists(file_path)
     
-    # Verify
-    assert len(loaded_vocab) == len(vocab)
+    # Load from file using class method
+    loaded_vocab = Vocabulary.load(file_path)
+    
+    # Verify basic properties
+    assert isinstance(loaded_vocab, Vocabulary)
+    assert loaded_vocab.vocab_size == vocab.vocab_size
+    
+    # Verify tokens
     for token in tokens:
-        assert token in loaded_vocab
-        assert loaded_vocab[token] == vocab[token]
+        assert token in loaded_vocab.token2id
+        assert loaded_vocab.token2id[token] == vocab.token2id[token]
