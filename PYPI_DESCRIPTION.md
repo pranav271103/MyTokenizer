@@ -61,6 +61,96 @@ from ultra_tokenizer import Tokenizer
 tokenizer = Tokenizer.from_file("my_tokenizer.json")
 ```
 
+## Advanced Usage
+
+### Custom Tokenization Rules
+
+```python
+from ultra_tokenizer import Tokenizer
+import re
+
+# Custom tokenization with regex pattern
+custom_tokenizer = Tokenizer(
+    tokenization_pattern=r"\b\w+\b|\S"  # Words or non-whitespace characters
+)
+```
+
+### Batch Processing
+
+```python
+# Process multiple texts efficiently
+texts = ["First sentence.", "Second sentence.", "Third sentence."]
+all_tokens = [tokenizer.tokenize(text) for text in texts]
+```
+
+## Customization
+
+### Special Tokens
+
+```python
+from ultra_tokenizer import Tokenizer
+
+# Initialize with custom special tokens
+tokenizer = Tokenizer(
+    special_tokens={
+        "unk_token": "[UNK]",
+        "pad_token": "[PAD]",
+        "cls_token": "[CLS]",
+        "sep_token": "[SEP]"
+    }
+)
+```
+
+### Custom Preprocessing
+
+```python
+def custom_preprocessor(text):
+    # Your custom preprocessing logic here
+    text = text.lower()
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
+tokenizer = Tokenizer(preprocessing_fn=custom_preprocessor)
+```
+
+## Fine-tuning
+
+### Updating an Existing Tokenizer
+
+```python
+# Continue training on new data
+with open("new_data.txt", "r", encoding="utf-8") as f:
+    trainer = TokenizerTrainer(vocab_size=35000)  # Slightly larger vocab
+    tokenizer = trainer.train_from_files(
+        ["new_data.txt"],
+        initial_tokenizer=tokenizer  # Start from existing tokenizer
+    )
+```
+
+### Domain-Specific Fine-tuning
+
+```python
+# Fine-tune on domain-specific data
+domain_trainer = TokenizerTrainer(
+    vocab_size=32000,
+    min_frequency=1,  # Include rare terms
+    special_tokens={"additional_special_tokens": ["[MED]", "[DISEASE]", "[TREATMENT]"]}
+)
+
+domain_tokenizer = domain_trainer.train_from_files(
+    ["medical_corpus.txt"],
+    initial_tokenizer=tokenizer  # Start from base tokenizer
+)
+```
+
+### Performance Optimization
+
+```python
+# Optimize for inference
+tokenizer.enable_caching()  # Cache tokenization results
+fast_tokens = tokenizer.tokenize("Optimized for speed!")
+```
+
 ## Documentation
 
 For detailed documentation, examples, and API reference, please visit:
