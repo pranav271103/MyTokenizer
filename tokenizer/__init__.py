@@ -1,5 +1,5 @@
 """
-MyTokenizer - Advanced Tokenizer for Natural Language Processing
+Ultra-Tokenizer - Advanced Tokenizer for Natural Language Processing
 
 A high-performance, production-ready tokenizer supporting multiple subword tokenization
 algorithms including BPE, WordPiece, and Unigram. Designed for efficiency and flexibility,
@@ -16,20 +16,20 @@ Features:
     - Memory efficient with smart caching
 
 Example:
-    >>> from MyTokenizer import Tokenizer, TokenizerTrainer
+    >>> from ultra_tokenizer import Tokenizer, TokenizerTrainer
     >>> trainer = TokenizerTrainer(vocab_size=30000)
     >>> tokenizer = trainer.train_from_files(["file1.txt", "file2.txt"])
     >>> tokens = tokenizer.encode("Hello, world!")
     >>> print(tokens)
 
-For more information, visit: https://github.com/pranav271103/MyTokenizer
+For more information, visit: https://github.com/pranav271103/Ultra-Tokenizer
 """
 
 __version__ = "0.1.0"
 __author__ = "Pranav Singh"
 __email__ = "pranav.singh01010101@gmail.com"
 __license__ = "Apache 2.0"
-__url__ = "https://github.com/pranav271103/MyTokenizer"
+__url__ = "https://github.com/pranav271103/Ultra-Tokenizer.git"
 
 from .tokenizer import Tokenizer
 from .vocab import Vocabulary

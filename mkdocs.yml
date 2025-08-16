@@ -1,7 +1,7 @@
-site_name: MyTokenizer
-site_url: https://pranav271103.github.io/MyTokenizer/
-repo_url: https://github.com/pranav271103/MyTokenizer
-repo_name: pranav271103/MyTokenizer
+site_name: Ultra-Tokenizer
+site_url: https://pranav271103.github.io/Ultra-Tokenizer/
+repo_url: https://github.com/pranav271103/Ultra-Tokenizer.git
+repo_name: pranav271103/Ultra-Tokenizer
 copyright: Copyright &copy; 2025 Pranav Singh
 
 # Theme configuration
@@ -85,13 +85,13 @@ nav:
       - Training: examples/training.md
       - Fine-tuning: examples/finetuning.md
   # Project files are available in the repository root
-  - Project: https://github.com/pranav271103/MyTokenizer
+  - Project: https://github.com/pranav271103/Ultra-Tokenizer.git
 
 # Extra
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/pranav271103/MyTokenizer
+      link: https://github.com/pranav271103/Ultra-Tokenizer.git
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/mytokenizer/
 

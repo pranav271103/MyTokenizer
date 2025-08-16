@@ -4,8 +4,8 @@
 import os
 from setuptools import setup, find_packages
 
-# Read the contents of README.md
-with open("README.md", "r", encoding="utf-8") as fh:
+# Read the contents of PYPI_DESCRIPTION.md
+with open("PYPI_DESCRIPTION.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 # Read requirements.txt
@@ -18,18 +18,18 @@ with open("tokenizer/__version__.py", "r", encoding="utf-8") as f:
     exec(f.read(), about)
 
 setup(
-    name="MyTokenizer",
+    name="ultra-tokenizer",
     version=about["__version__"],
     author="Pranav Singh",
     author_email="pranav.singh01010101@gmail.com",
     description="Advanced tokenizer with support for BPE, WordPiece, and Unigram algorithms",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pranav271103/MyTokenizer",
+    url="https://github.com/pranav271103/Ultra-Tokenizer.git",
     project_urls={
-        "Documentation": "https://github.com/pranav271103/MyTokenizer#readme",
-        "Bug Tracker": "https://github.com/pranav271103/MyTokenizer/issues",
-        "Source Code": "https://github.com/pranav271103/MyTokenizer",
+        "Documentation": "https://github.com/pranav271103/Ultra-Tokenizer.git#readme",
+        "Bug Tracker": "https://github.com/pranav271103/Ultra-Tokenizer/issues",
+        "Source Code": "https://github.com/pranav271103/Ultra-Tokenizer.git",
     },
     packages=find_packages(exclude=["tests", "tests.*", "examples", "examples.*"]),
     package_data={"tokenizer": ["py.typed"]},

@@ -2,7 +2,7 @@
 """
 MyTokenizer Demo
 
-A simple interactive demo for the MyTokenizer package.
+A simple interactive demo for the Ultra-Tokenizer package.
 """
 
 import argparse
@@ -50,7 +50,7 @@ def train_demo_tokenizer() -> Tokenizer:
 def interactive_demo():
     """Run an interactive demo of the tokenizer."""
     print("=" * 60)
-    print("MyTokenizer - Interactive Demo")
+    print("Ultra-Tokenizer - Interactive Demo")
     print("=" * 60)
     print("\nThis demo will train a simple tokenizer and allow you to test it.")
 
@@ -112,11 +112,11 @@ def interactive_demo():
     except Exception as e:
         print(f"\nAn error occurred: {e}")
     finally:
-        print("\nThank you for trying MyTokenizer!")
+        print("\nThank you for trying Ultra-Tokenizer!")
 
 
 def main():
-    parser = argparse.ArgumentParser(description="MyTokenizer Demo")
+    parser = argparse.ArgumentParser(description="Ultra-Tokenizer Demo")
     parser.add_argument(
         "--text",
         type=str,

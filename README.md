@@ -1,14 +1,13 @@
-# MyTokenizer
+# Ultra-Tokenizer
 
-[![PyPI version](https://img.shields.io/pypi/v/MyTokenizer.svg)](https://badge.fury.io/py/MyTokenizer)
-[![Python Version](https://img.shields.io/pypi/pyversions/MyTokenizer)](https://pypi.org/project/MyTokenizer/)
+[![PyPI version](https://img.shields.io/pypi/v/ultra-tokenizer.svg)](https://pypi.org/project/ultra-tokenizer/)
+[![Python Version](https://img.shields.io/pypi/pyversions/ultra-tokenizer.svg)](https://pypi.org/project/ultra-tokenizer/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Tests](https://github.com/pranav271103/MyTokenizer/actions/workflows/tests.yml/badge.svg)](https://github.com/pranav271103/MyTokenizer/actions)
-[![codecov](https://codecov.io/gh/pranav271103/MyTokenizer/graph/badge.svg?token=YOUR-TOKEN)](https://codecov.io/gh/pranav271103/MyTokenizer)
+[![codecov](https://codecov.io/gh/pranav271103/Ultra-Tokenizer/graph/badge.svg?token=YOUR-TOKEN)](https://codecov.io/gh/pranav271103/Ultra-Tokenizer)
 [![Documentation Status](https://readthedocs.org/projects/mytokenizer/badge/?version=latest)](https://mytokenizer.readthedocs.io/en/latest/?badge=latest)
 
-MyTokenizer is a high-performance, production-ready tokenizer that supports multiple subword tokenization algorithms including BPE, WordPiece, and Unigram. Designed for efficiency and flexibility, it's perfect for modern NLP pipelines.
+Ultra-Tokenizer is a high-performance, production-ready tokenizer that supports multiple subword tokenization algorithms including BPE, WordPiece, and Unigram. Designed for efficiency and flexibility, it's perfect for modern NLP pipelines.
 
 ## Table of Contents
 
@@ -20,9 +19,9 @@ MyTokenizer is a high-performance, production-ready tokenizer that supports mult
 - [License](#-license)
 - [Contact](#-contact)
 
-## Why Choose MyTokenizer?
+## Why Choose Ultra-Tokenizer?
 
-While there are several tokenization libraries available, MyTokenizer stands out in several key areas:
+While there are several tokenization libraries available, Ultra-Tokenizer stands out in several key areas:
 
 ### Performance Optimized
 - **Lightning Fast**: Engineered for high throughput with minimal memory overhead
@@ -47,7 +46,7 @@ While there are several tokenization libraries available, MyTokenizer stands out
 
 ### Comparison with Other Tokenizers
 
-| Feature | MyTokenizer | HuggingFace Tokenizers | spaCy | NLTK |
+| Feature | Ultra-Tokenizer | HuggingFace Tokenizers | spaCy | NLTK |
 |---------|-------------|------------------------|-------|------|
 | Multiple Algorithms | ✅ BPE, WordPiece, Unigram | ✅ BPE, WordPiece, Unigram | ❌ Mostly rule-based | ❌ Rule-based |
 | Training Interface | ✅ Simple and intuitive | ✅ Comprehensive | ❌ Limited | ❌ No built-in training |
@@ -76,20 +75,20 @@ While there are several tokenization libraries available, MyTokenizer stands out
 Install the latest stable version from PyPI:
 
 ```bash
-pip install MyTokenizer
+pip install ultra-tokenizer
 ```
 
 For the latest development version:
 
 ```bash
-pip install git+https://github.com/pranav271103/MyTokenizer.git
+pip install git+https://github.com/pranav271103/Ultra-Tokenizer.git
 ```
 
 For development:
 
 ```bash
-git clone https://github.com/pranav271103/MyTokenizer.git
-cd MyTokenizer
+git clone https://github.com/pranav271103/Ultra-Tokenizer.git
+cd Ultra-Tokenizer
 pip install -e ".[dev]"  # Install in development mode with all dependencies
 ```
 
@@ -98,7 +97,7 @@ pip install -e ".[dev]"  # Install in development mode with all dependencies
 ### Basic Usage
 
 ```python
-from MyTokenizer import Tokenizer, TokenizerTrainer
+from ultra_tokenizer import Tokenizer, TokenizerTrainer
 
 # Initialize and train a tokenizer
 trainer = TokenizerTrainer(
@@ -135,7 +134,7 @@ decoded = tokenizer.decode(encoded.ids)
 
 ## Documentation
 
-Full documentation is available at [https://pranav271103.github.io/MyTokenizer/](https://pranav271103.github.io/MyTokenizer/)
+Full documentation is available at [https://pranav271103.github.io/Ultra-Tokenizer/](https://pranav271103.github.io/Ultra-Tokenizer/)
 
 ### Key Components
 
@@ -188,7 +187,7 @@ Distributed under the Apache 2.0 License. See [LICENSE](LICENSE) for more inform
 
 Pranav Singh - pranav.singh01010101@gmail.com
 
-Project Link: [https://github.com/pranav271103/MyTokenizer](https://github.com/pranav271103/MyTokenizer)
+Project Link: [Ultra-Tokenizer](https://github.com/pranav271103/Ultra-Tokenizer.git)
 
 ## Acknowledgments
 

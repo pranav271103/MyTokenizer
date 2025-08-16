@@ -1,6 +1,6 @@
 # Quickstart Guide
 
-This guide will help you get started with MyTokenizer quickly. We'll cover the basic usage patterns and common operations.
+This guide will help you get started with Ultra-Tokenizer quickly. We'll cover the basic usage patterns and common operations.
 
 ## Basic Usage
 
@@ -23,7 +23,7 @@ tokenizer = Tokenizer()
 Tokenize a simple sentence:
 
 ```python
-text = "Hello, world! This is MyTokenizer in action."
+text = "Hello, world! This is Ultra-Tokenizer in action."
 tokens = tokenizer.tokenize(text)
 print(tokens)
 # Output: ['Hello', ',', 'world', '!', 'This', 'is', 'My', '##Token', '##izer', 'in', 'action', '.']

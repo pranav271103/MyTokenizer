@@ -3,14 +3,14 @@
 ## Using pip
 
 ```bash
-pip install mytokenizer
+pip install ultratokenizer
 ```
 
 ## From Source
 
 ```bash
-git clone https://github.com/pranav271103/MyTokenizer.git
-cd MyTokenizer
+git clone https://github.com/pranav271103/Ultra-Tokenizer.git
+cd Ultra-Tokenizer
 pip install -e .
 ```
 
